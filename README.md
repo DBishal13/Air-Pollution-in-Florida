@@ -25,11 +25,48 @@ Using the feature layer, I made a web map, which will later be used in the dashb
 
 
 **Figure 2. Configuration of Map pop-ups.**
+![Configuration of Map pop-ups](images/pop-ups.png)
 
 I changed the color of the symbols to red and the base map to Light Gray Canvas and saved the web map as PM2.5 Florida Daily.
 
 **Link to web map: [PM2.5 Florida Daily](https://arcg.is/0yeO5y0)**
 
 ### 3. Preparation of Dashboard
-Using the web map I built as the map reference and web layer data, I finally developed a dashboard using the black theme. Apart from the map, I added a list containing the names of all the air quality stations in which stations that have PM2.5 values greater than 6 are in red. I used the following arcade expression to give it a title of color Tomato:
+Using the web map I built as the map reference and web layer data, I finally developed a dashboard using the black theme. Apart from the map, I added a list containing the names of all the air quality stations, in which stations with PM2.5 values greater than 6 are in red. I used the following arcade expression to give it a title of color Tomato: 
+```html
+<h3 style="color: Tomato">Stations with PM2.5 Greater than 6 as Red</h3>
+```
+**Figure 3. Arcade Expression for symbolizing list**
+![Arcade Expression for symbolizing list](images/symbolize.png)
+
+Also, with the header, I used the Number Selector slider to specify the range of values so that it renders the map and the list. 
+
+I also added a Serial Chart to show the top 5 sites with the highest value of PM2.5, making it easier to decide the priority areas. The chart's purpose is similar to that of the list, but it highlights the most polluted neighborhood in terms of PM2.5, unlike the list, which highlights all the areas with a PM2.5 concentration value greater than 6.
+
+Finally, I added an indicator to show the latest available data date and time and the last updated time to make it more interactive and up-to-date.
+
+[Link to the dashboard](https://arcg.is/1yGzfT)
+
+**Figure 4. The front of the dashboard**
+![The front of the dashboard](images/final.png)
+
+### 4. Update the Dashboard with the Most Recent Data
+
+Finally, once the dashboard was done, I saved it as a Dashboard for Visualizing the PM 2.5 Daily Average in Florida and made it public. In addition, I aim to provide the latest air quality data through this dashboard. To achieve this, I modified the tool I initially made in ArcGIS Pro to semiautomatically update the web layer with a new CSV file to provide the latest data. I modified the initial tool to clear the row of the web layer using the Delete Rows tool in ArcGIS Pro and append it with the latest data from the CSV file to populate it with the most recent data.
+
+**Figure 6. Tool to automate the update of most recent air quality data in the web layer**
+![Tool to automate the update of most recent air quality data in the web layer](images/model2.png)
+We can also schedule the process by scheduling the tool for a specific time with our time interval (hourly, daily, weekly, etc). In this way, we can automate the visualization in the dashboard using ArcGIS Pro.
+
+### Results and Conclusion
+
+ArcGIS Pro and ArcGIS Online can be connected using the Esri account, making it possible to make changes to the web layer using ArcGIS Pro. Figure 5 shows that as of December 3, 2023, 2:16 PM, Olca YMCA in Marion County has the highest PM2.5 concentration value (8.90). Surprisingly, the southern coastal cities such as Miami don’t have that much PM2.5 pollution. In this way, we can analyze the pollution of PM2.5 using the dashboard, which can also be used for other datasets.
+
+The shortcoming of this dashboard is that we must download the CSV file each time and feed it into the model; everything else is automated. I couldn’t find free APIs to directly provide the data into ArcGIS Online due to time limitations for the project and limited access to my ArcGIS privileges.
+
+### References:
+
+- [EPA - Particulate Matter (PM2.5) Trends](https://www.epa.gov/air-trends/particulate-matter-pm25-trends)
+- [Florida's Air Quality](https://floridadep.gov/air/air-monitoring/content/floridas-air-quality)
+- [EPA - Download Daily Data](https://www.epa.gov/outdoor-air-quality-data/download-daily-data)
 
