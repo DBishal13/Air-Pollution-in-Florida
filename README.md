@@ -1,4 +1,5 @@
 # Air Pollution in Florida: Dashboard for Visualization of Mean Daily Average Fine Particulate Matter (PM2.5) with Automatic Update Tool
+Check the final dashboard here: [View Dashboard](https://arcg.is/1yGzfT)
 
 ## Introduction
 PM2.5 pollution, consisting of fine particulate matter smaller than 2.5 micrometers in diameter, poses a significant threat to public health and the environment (EPA). In the United States, this pollution originates from various sources, including vehicle emissions, industrial processes, and wildfires. Its impact on human health is linked to respiratory issues, cardiovascular problems, and even premature death.
