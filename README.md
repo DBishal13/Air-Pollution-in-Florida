@@ -18,7 +18,7 @@ After downloading the data from EPA in CSV format, the first thing to do is load
 
 **Figure 1. Model to preprocess the data.**
 
-![Model to preprocess the data](https://arcg.is/1Xj8HH0)
+![Model to preprocess the data](images/Model.png)
 
 ### 2. Preparation of Web Map
 Using the feature layer, I made a web map, which will later be used in the dashboard to visualize the PM2.5 values in different stations using graduated color symbology. The larger circle represents the higher PM2.5 value. I also made some changes for popups by using the following arcade expression:
